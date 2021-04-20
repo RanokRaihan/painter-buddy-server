@@ -55,7 +55,7 @@ client.connect(err => {
 
     //load latest reviews
     app.get('/highlightedReviews', (req, res) => {
-        testimonialCollection.find().sort({ _id: -1 }).limit(4)
+        testimonialCollection.find().sort({ _id: -1 }).limit(3)
             .toArray((err, document) => {
                 res.send(document)
             });
