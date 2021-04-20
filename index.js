@@ -31,7 +31,7 @@ client.connect(err => {
 
     //load all service
     app.get('/allServices', (req, res) => {
-        serviceCollection.find()
+        serviceCollection.find().sort({ _id: -1 })
             .toArray((err, document) => {
                 res.send(document)
             });
@@ -108,7 +108,7 @@ client.connect(err => {
 
     //load all order
     app.get('/allOrder', (req, res) => {
-        allBookings.find()
+        allBookings.find().sort({ _id: -1 })
             .toArray((err, document) => {
                 res.send(document)
             });
